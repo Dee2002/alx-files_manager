@@ -1,11 +1,19 @@
-/* eslint-disable import/no-named-as-default */
 import sha1 from 'sha1';
 import Queue from 'bull/lib/queue';
 import dbClient from '../utils/db';
 
 const userQueue = new Queue('email sending');
 
+/**
+ * Controller class for handling user-related operations.
+ */
 export default class UsersController {
+  /**
+   * Create a new user.
+   * @param {Object} req - The request object.
+   * @param {Object} res - The response object.
+   * @returns {Promise<void>} - A promise that resolves when the operation is complete.
+   */
   static async postNew(req, res) {
     const email = req.body ? req.body.email : null;
     const password = req.body ? req.body.password : null;
@@ -32,6 +40,12 @@ export default class UsersController {
     res.status(201).json({ email, id: userId });
   }
 
+  /**
+   * Get the details of the currently logged-in user.
+   * @param {Object} req - The request object.
+   * @param {Object} res - The response object.
+   * @returns {void}
+   */
   static async getMe(req, res) {
     const { user } = req;
 

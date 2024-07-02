@@ -1,4 +1,3 @@
-/* eslint-disable import/no-named-as-default */
 import { writeFile } from 'fs';
 import { promisify } from 'util';
 import Queue from 'bull/lib/queue';
@@ -62,14 +61,14 @@ userQueue.process(async (job, done) => {
   }
   console.log(`Welcome ${user.email}!`);
   try {
-    const mailSubject = 'Welcome to ALX-Files_Manager by B3zaleel';
+    const mailSubject = 'Welcome to ALX-Files_Manager by Delsa and Daniel';
     const mailContent = [
       '<div>',
       '<h3>Hello {{user.name}},</h3>',
-      'Welcome to <a href="https://github.com/B3zaleel/alx-files_manager">',
+      'Welcome to <a href="https://github.com/Dee2002/alx-files_manager">',
       'ALX-Files_Manager</a>, ',
       'a simple file management API built with Node.js by ',
-      '<a href="https://github.com/B3zaleel">Bezaleel Olakunori</a>. ',
+      '<a href="https://github.com/Dee2002">Delsa Marasha</a>. ',
       'We hope it meets your needs.',
       '</div>',
     ].join('');
