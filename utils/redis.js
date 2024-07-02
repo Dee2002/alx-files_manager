@@ -2,11 +2,11 @@ import { promisify } from 'util';
 import { createClient } from 'redis';
 
 /**
- * Represents a Redis client.
+ * Reps a Redis client
  */
 class RedisClient {
   /**
-   * Creates a new RedisClient instance.
+   * Creates new instance RedisClient
    */
   constructor() {
     this.client = createClient();
@@ -21,7 +21,7 @@ class RedisClient {
   }
 
   /**
-   * Checks if this client's connection to the Redis server is active.
+   * Checks if client's connection to Redis server is active
    * @returns {boolean}
    */
   isAlive() {
@@ -29,8 +29,8 @@ class RedisClient {
   }
 
   /**
-   * Retrieves the value of a given key.
-   * @param {String} key The key of the item to retrieve.
+   * Recollects value of given key.
+   * @param {String} directs key of the item to retrieve.
    * @returns {String | Object}
    */
   async get(key) {
@@ -38,10 +38,10 @@ class RedisClient {
   }
 
   /**
-   * Stores a key and its value along with an expiration time.
-   * @param {String} key The key of the item to store.
-   * @param {String | Number | Boolean} value The item to store.
-   * @param {Number} duration The expiration time of the item in seconds.
+   * Stores key and its value along with an expiration time
+   * @param {String} key The key of the item to store
+   * @param {String | Number | Boolean} val item to store
+   * @param {Number} duration expiration time of the item in seconds
    * @returns {Promise<void>}
    */
   async set(key, value, duration) {
@@ -50,8 +50,8 @@ class RedisClient {
   }
 
   /**
-   * Removes the value of a given key.
-   * @param {String} key The key of the item to remove.
+   * Removes value of a given key
+   * @param {String} key The key of item to get rid of
    * @returns {Promise<void>}
    */
   async del(key) {

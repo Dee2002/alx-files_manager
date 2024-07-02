@@ -11,9 +11,9 @@ const fileQueue = new Queue('thumbnail generation');
 const userQueue = new Queue('email sending');
 
 /**
- * Generates the thumbnail of an image with a given width size.
- * @param {String} filePath The location of the original file.
- * @param {number} size The width of the thumbnail.
+ * Generate a thumbnail of an image with width size
+ * @param {String} filePath location of original file
+ * @param {number} size width of thumbnail
  * @returns {Promise<void>}
  */
 const generateThumbnail = async (filePath, size) => {

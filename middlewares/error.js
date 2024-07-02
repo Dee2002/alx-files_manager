@@ -1,7 +1,8 @@
+// Disable ESLint warning for unused variables
 import { Request, Response, NextFunction } from 'express';
 
 /**
- * Represents an error in this API.
+ * Custom error class for API-specific errors
  */
 export class APIError extends Error {
   constructor(code, message) {
@@ -12,15 +13,15 @@ export class APIError extends Error {
 }
 
 /**
- * Applies Basic authentication to a route.
- * @param {Error} err The error object.
- * @param {Request} req The Express request object.
- * @param {Response} res The Express response object.
- * @param {NextFunction} next The Express next function.
+ * Global error handling middleware
+ * 
+ * @param {Error} err - Error object
+ * @param {Request} req - Express request object
+ * @param {Response} res - Express response object
+ * @param {NextFunction} next - Express next middleware function
  */
 export const errorResponse = (err, req, res, next) => {
   const defaultMsg = `Failed to process ${req.url}`;
-
   if (err instanceof APIError) {
     res.status(err.code).json({ error: err.message || defaultMsg });
     return;
@@ -29,3 +30,4 @@ export const errorResponse = (err, req, res, next) => {
     error: err ? err.message || err.toString() : defaultMsg,
   });
 };
+

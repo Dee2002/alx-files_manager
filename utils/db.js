@@ -3,11 +3,11 @@ import Collection from 'mongodb/lib/collection';
 import envLoader from './env_loader';
 
 /**
- * Represents a MongoDB client.
+ * Reps MongoDB client
  */
 class DBClient {
   /**
-   * Creates a new DBClient instance.
+   * Creates new instance for DBClient
    */
   constructor() {
     envLoader();
@@ -21,7 +21,7 @@ class DBClient {
   }
 
   /**
-   * Checks if this client's connection to the MongoDB server is active.
+   * Checks if client's connection to MongoDB server is actively running
    * @returns {boolean}
    */
   isAlive() {
@@ -29,7 +29,7 @@ class DBClient {
   }
 
   /**
-   * Retrieves the number of users in the database.
+   * Collects no. of users in db
    * @returns {Promise<Number>}
    */
   async nbUsers() {
@@ -37,7 +37,7 @@ class DBClient {
   }
 
   /**
-   * Retrieves the number of files in the database.
+   * Collects no. of files in db.
    * @returns {Promise<Number>}
    */
   async nbFiles() {
@@ -45,7 +45,7 @@ class DBClient {
   }
 
   /**
-   * Retrieves a reference to the `users` collection.
+   * Retrieves reference to `users` collection
    * @returns {Promise<Collection>}
    */
   async usersCollection() {
@@ -53,7 +53,7 @@ class DBClient {
   }
 
   /**
-   * Retrieves a reference to the `files` collection.
+   * Retrieves reference to `files` collection
    * @returns {Promise<Collection>}
    */
   async filesCollection() {

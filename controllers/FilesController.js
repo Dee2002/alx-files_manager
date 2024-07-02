@@ -51,9 +51,9 @@ const isValidId = (id) => {
 
 export default class FilesController {
   /**
-   * Uploads a file.
-   * @param {Request} req The Express request object.
-   * @param {Response} res The Express response object.
+   * Uploads files
+   * @param {Request} req Express request object
+   * @param {Response} res Express response object
    */
   static async postUpload(req, res) {
     const { user } = req;
@@ -158,9 +158,9 @@ export default class FilesController {
   }
 
   /**
-   * Retrieves files associated with a specific user.
-   * @param {Request} req The Express request object.
-   * @param {Response} res The Express response object.
+   * Retrieves files assoc. with a specific user
+   * @param {Request} req Express request object
+   * @param {Response} res Express response object
    */
   static async getIndex(req, res) {
     const { user } = req;
@@ -257,9 +257,9 @@ export default class FilesController {
   }
 
   /**
-   * Retrieves the content of a file.
-   * @param {Request} req The Express request object.
-   * @param {Response} res The Express response object.
+   * recieves file content.
+   * @param {Request} req Express request object
+   * @param {Response} res Express response object
    */
   static async getFile(req, res) {
     const user = await getUserFromXToken(req);
@@ -299,3 +299,4 @@ export default class FilesController {
     res.status(200).sendFile(absoluteFilePath);
   }
 }
+
